@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-white text-slate-700 antialiased;
+  }
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+  :focus-visible {
+    outline: 3px solid #9c6b3e;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors;
+  }
+  .btn-primary {
+    @apply btn bg-navy text-white hover:bg-navy-dark;
+  }
+  .btn-accent {
+    @apply btn bg-wood text-white hover:bg-wood-dark;
+  }
+  .btn-outline {
+    @apply btn border border-navy text-navy hover:bg-navy-soft;
+  }
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+  .section-title {
+    @apply text-2xl font-extrabold tracking-tight text-navy sm:text-3xl;
+  }
+  .section-lead {
+    @apply mt-3 max-w-2xl text-base leading-relaxed text-slate-600;
+  }
+}
